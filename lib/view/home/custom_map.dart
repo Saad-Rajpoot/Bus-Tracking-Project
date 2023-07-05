@@ -178,7 +178,7 @@ class _CustomMapState extends State<CustomMap> {
       polylines: _polyline,
       initialCameraPosition: CameraPosition(
         target: pro.userLocation == null
-            ? const LatLng(34.1961732167, 73.2361753966)
+            ? const LatLng(34.19687497834953, 73.22847289557177)
             : LatLng(pro.userLocation!.latitude!, pro.userLocation!.longitude!),
         zoom: 15,
       ),
@@ -215,7 +215,7 @@ class _CustomMapState extends State<CustomMap> {
         CameraPosition(
           target: userCameraPosition == null
               ? pro.userLocation == null
-                  ? const LatLng(34.1961732167, 73.2361753966)
+                  ? const LatLng(34.19687497834953, 73.22847289557177)
                   : LatLng(
                       pro.userLocation!.latitude!, pro.userLocation!.longitude!)
               : userCameraPosition!.target,
