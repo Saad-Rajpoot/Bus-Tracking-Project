@@ -30,10 +30,11 @@ Container customTextField(TextEditingController controller, String text,
                 return "Name should contain only character";
               }
             } else if (text == "Valid email" || text == "Enter your email") {
-              if (value != null && !value.contains("@lus.ac.bd")) {
-                snackBar(context, "You have to use LU G Suite Email");
-                return "You have to use LU G Suite Email";
-              } else if (value == null || value.isEmpty) {
+              // if (value != null && !value.contains("@lus.ac.bd")) {
+              //   snackBar(context, "You have to use LU G Suite Email");
+              //   return "You have to use LU G Suite Email";
+              // } else
+                if (value == null || value.isEmpty) {
                 snackBar(context, "Field can not be empty!");
                 return "Field can not be empty!";
               }

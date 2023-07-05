@@ -29,6 +29,7 @@ class _InitialState extends State<Initial> {
   Future<void> _initializeFirebase() async {
     try {
       _initialization = Firebase.initializeApp(
+          name: "Bus Tracking Project",
           options: FirebaseOptions(
               apiKey: 'AIzaSyC9DgR5g4elQjgH_6jabIWmUCMK8GAsQDc',
               appId: '1:1067691145431:android:50908935e39ebdbbb8d892',

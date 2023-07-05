@@ -100,111 +100,109 @@ class _VerificationState extends State<Verification> {
 
   Scaffold _buildScaffold() {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(30.sp),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Spacer(),
-              SizedBox(
-                height: 50.h,
+      body: Padding(
+        padding: EdgeInsets.all(30.sp),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            SizedBox(
+              height: 50.h,
+            ),
+            SizedBox(
+              height: 100.h,
+              width: 100.h,
+              child: Image.asset("assets/email.png"),
+            ),
+            SizedBox(height: 22.h),
+            Text(
+              "Check your email",
+              style: GoogleFonts.inter(
+                fontSize: 25.sp,
+                color: primaryColor,
+                fontWeight: FontWeight.w600,
               ),
-              SizedBox(
-                height: 100.h,
-                width: 100.h,
-                child: Image.asset("assets/email.png"),
-              ),
-              SizedBox(height: 22.h),
-              Text(
-                "Check your email",
+            ),
+            SizedBox(height: 13.h),
+            SizedBox(
+              width: 300.w,
+              child: Text(
+                "We have sent a verification link to your email to your email",
                 style: GoogleFonts.inter(
-                  fontSize: 25.sp,
+                  fontSize: 14.sp,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(height: 25.h),
+            InkWell(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () {
+                checkVerification();
+              },
+              child: flatButton(
+                  name: 'Check Verification', height: 50, width: 200),
+            ),
+            SizedBox(height: 15.h),
+            InkWell(
+              onTap: () {
+                sendVerificationLink();
+              },
+              child: Text(
+                "Resend code",
+                style: GoogleFonts.inter(
+                  fontSize: 15.sp,
                   color: primaryColor,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
+                  decoration: TextDecoration.underline,
                 ),
               ),
-              SizedBox(height: 13.h),
-              SizedBox(
-                width: 300.w,
-                child: Text(
-                  "We have sent a verification link to your email to your email",
-                  style: GoogleFonts.inter(
-                    fontSize: 14.sp,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(height: 25.h),
-              InkWell(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () {
-                  checkVerification();
-                },
-                child: flatButton(
-                    name: 'Check Verification', height: 50, width: 200),
-              ),
-              SizedBox(height: 15.h),
-              InkWell(
-                onTap: () {
-                  sendVerificationLink();
-                },
-                child: Text(
-                  "Resend code",
-                  style: GoogleFonts.inter(
-                    fontSize: 15.sp,
-                    color: primaryColor,
-                    fontWeight: FontWeight.w400,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              SizedBox(
-                width: 414.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Did not receive the email? Check your spam filter, or",
-                      style: GoogleFonts.inter(
-                        fontSize: 12.sp,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      textAlign: TextAlign.center,
+            ),
+             Expanded(child: Container()),
+            SizedBox(
+              width: 414.w,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Did not receive the email? Check your spam filter, or",
+                    style: GoogleFonts.inter(
+                      fontSize: 12.sp,
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w400,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Provider.of<Authentication>(context, listen: false)
-                                .deleteUser();
-                            Navigator.of(context)
-                                .pushReplacementNamed("Registration");
-                          },
-                          child: Text(
-                            "Try another email address",
-                            style: GoogleFonts.inter(
-                              fontSize: 14.sp,
-                              color: primaryColor,
-                              fontWeight: FontWeight.w600,
-                              decoration: TextDecoration.underline,
-                            ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Provider.of<Authentication>(context, listen: false)
+                              .deleteUser();
+                          Navigator.of(context)
+                              .pushReplacementNamed("Registration");
+                        },
+                        child: Text(
+                          "Try another email address",
+                          style: GoogleFonts.inter(
+                            fontSize: 14.sp,
+                            color: primaryColor,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
-                      ],
-                    )
-                  ],
-                ),
+                      ),
+                    ],
+                  )
+                ],
               ),
-              SizedBox(height: 50.h),
-            ],
-          ),
+            ),
+            SizedBox(height: 50.h),
+          ],
         ),
       ),
     );
