@@ -28,7 +28,7 @@ The Bus Tracking Project is a mobile application developed using Flutter to trac
 ## Screenshots
 
 ![Signup Screen](https://user-images.githubusercontent.com/69424471/230732957-ba241a1b-83ea-4d2d-8de6-a5108d61643a.jpeg)
-![Signin Screen](screenshots/home_screen.png)
+![Signin Screen](https://user-images.githubusercontent.com/69424471/230732960-f80bc874-fe03-4759-9ece-65e475bbf971.jpeg)
 ![Home Screen](screenshots/home_screen.png)
 ![Bus Details](screenshots/bus_details.png)
 ![Route Map](screenshots/route_map.png)
